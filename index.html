@@ -107,27 +107,6 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Skills</h2>
                 <p class="text-lg text-secondary">Technologies and tools I work with</p>
             </div>
-            
-            <!-- Admin Panel for Skills (only visible when authenticated) -->
-            <div id="skills-admin" class="hidden mb-8 p-6 bg-blue-50 rounded-lg border border-blue-200">
-                <h3 class="text-lg font-semibold mb-4">Add New Skill</h3>
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <input type="text" id="skill-name" placeholder="Technology/Skill" class="px-3 py-2 border border-gray-300 rounded-md">
-                    <select id="skill-category" class="px-3 py-2 border border-gray-300 rounded-md">
-                        <option value="language">Programming Language</option>
-                        <option value="framework">Framework/Library</option>
-                        <option value="cloud">Cloud Platform</option>
-                        <option value="tool">Tool/Technology</option>
-                    </select>
-                    <select id="skill-level" class="px-3 py-2 border border-gray-300 rounded-md">
-                        <option value="beginner">Beginner</option>
-                        <option value="intermediate">Intermediate</option>
-                        <option value="advanced">Advanced</option>
-                        <option value="expert">Expert</option>
-                    </select>
-                    <button onclick="addSkill()" class="bg-accent text-white px-4 py-2 rounded-md hover:bg-blue-600">Add</button>
-                </div>
-            </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="skills-grid">
                 <!-- Skill items will be populated by JavaScript -->
@@ -169,19 +148,6 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Projects</h2>
                 <p class="text-lg text-secondary">Things I'm building and have built</p>
             </div>
-            
-            <!-- Admin Panel for Projects -->
-            <div id="projects-admin" class="hidden mb-8 p-6 bg-green-50 rounded-lg border border-green-200">
-                <h3 class="text-lg font-semibold mb-4">Add New Project</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input type="text" id="project-title" placeholder="Project Title" class="px-3 py-2 border border-gray-300 rounded-md">
-                    <input type="text" id="project-tech" placeholder="Technologies (comma separated)" class="px-3 py-2 border border-gray-300 rounded-md">
-                    <textarea id="project-description" placeholder="Project Description" rows="3" class="px-3 py-2 border border-gray-300 rounded-md md:col-span-2"></textarea>
-                    <input type="url" id="project-demo" placeholder="Demo URL (optional)" class="px-3 py-2 border border-gray-300 rounded-md">
-                    <input type="url" id="project-github" placeholder="GitHub URL (optional)" class="px-3 py-2 border border-gray-300 rounded-md">
-                </div>
-                <button onclick="addProject()" class="mt-4 bg-accent text-white px-4 py-2 rounded-md hover:bg-blue-600">Add Project</button>
-            </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
                 <!-- Projects will be populated by JavaScript -->
@@ -195,22 +161,6 @@
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Notes & Ideas</h2>
                 <p class="text-lg text-secondary">Random thoughts and insights</p>
-            </div>
-            
-            <!-- Admin Panel for Notes -->
-            <div id="notes-admin" class="hidden mb-8 p-6 bg-yellow-50 rounded-lg border border-yellow-200">
-                <h3 class="text-lg font-semibold mb-4">Add New Note</h3>
-                <div class="grid grid-cols-1 gap-4">
-                    <input type="text" id="note-title" placeholder="Note Title" class="px-3 py-2 border border-gray-300 rounded-md">
-                    <textarea id="note-content" placeholder="Your thoughts..." rows="4" class="px-3 py-2 border border-gray-300 rounded-md"></textarea>
-                    <select id="note-category" class="px-3 py-2 border border-gray-300 rounded-md w-40">
-                        <option value="tech">Tech</option>
-                        <option value="idea">Idea</option>
-                        <option value="learning">Learning</option>
-                        <option value="personal">Personal</option>
-                    </select>
-                </div>
-                <button onclick="addNote()" class="mt-4 bg-accent text-white px-4 py-2 rounded-md hover:bg-blue-600">Add Note</button>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="notes-grid">
@@ -279,11 +229,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Admin Toggle Button (floating) -->
-    <button id="admin-toggle" class="fixed bottom-6 right-6 bg-accent text-white p-3 rounded-full shadow-lg hover:bg-blue-600 transition-colors duration-200 z-50">
-        <i class="fas fa-cog"></i>
-    </button>
 
     <!-- Back to Top Button -->
     <button id="back-to-top" class="fixed bottom-6 left-6 bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition-colors duration-200 opacity-0 pointer-events-none z-40">
