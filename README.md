@@ -1,50 +1,24 @@
-# Personal Portfolio
+# Simon Moreno — personal website
 
-A clean, responsive portfolio website built for GitHub Pages.
+My projects, videos, and creative experiments. Live at https://simorenoh.github.io/.
 
-## Tech Stack
+Built with static HTML, CSS, and JavaScript. Includes selected finished reels, a
+searchable library of 125 playable editing effects, and real workflow screenshots.
+Project status and inspiration credits are included with the work.
 
-- **HTML5** - Semantic markup
-- **Tailwind CSS** - Utility-first CSS framework via CDN
-- **Vanilla JavaScript** - No frameworks, client-side functionality
-- **Font Awesome** - Icons
-- **Google Fonts** - Inter typography
+## Local development
 
-## Features
-
-- Responsive design optimized for all devices
-- Skills showcase with proficiency levels
-- Project gallery with filtering
-- Personal notes system using localStorage
-- Admin panel for content management
-- Smooth scrolling navigation and animations
-
-## Architecture
-
-- **Static site** - No build process required
-- **Client-side data persistence** - Uses browser localStorage for dynamic content
-- **Admin mode** - Password-protected content management interface
-- **GitHub Pages ready** - Deploy directly from main branch
-
-## Local Development
-
-```bash
-# Clone the repository
-git clone https://github.com/simorenoh/simorenoh.github.io.git
-cd simorenoh.github.io
-
-# Serve locally (any HTTP server works)
-python3 -m http.server 8000
-# or
-npx serve .
+```sh
+python3 scripts/build.py
+python3 -m http.server 8000 --directory dist
 ```
 
-Visit `http://localhost:8000` to view the site.
+The build downloads a pinned media release and verifies its SHA-256 checksum before
+extracting it. It validates page assets, effect clips/posters, reels, and fonts.
+Python 3.13 is used by the deployment workflow. No npm dependencies are needed.
 
-## Deployment
+Media is kept out of Git history. The release bundle contains only the assets
+selected for this public website. No raw recordings or private project files.
+Fonts are served locally with their accompanying license.
 
-Push to the `main` branch and enable GitHub Pages in repository settings. The site will be available at `https://simorenoh.github.io`.
-
-## License
-
-MIT License
+See [DEPLOYMENT.md](DEPLOYMENT.md) for updates and rollback.

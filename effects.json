@@ -1,0 +1,1002 @@
+[
+  {
+    "id": "stacked-captions",
+    "name": "Stacked bold captions",
+    "group": "Captions & titles",
+    "credit": null,
+    "use": "Default captions: two short lines under the chin, a big yellow punch word for emphasis.",
+    "dur": 3.2
+  },
+  {
+    "id": "karaoke-box",
+    "name": "Karaoke box",
+    "group": "Captions & titles",
+    "credit": "@taki.gpt",
+    "use": "When the words themselves matter: each spoken word lights up.",
+    "dur": 2.2
+  },
+  {
+    "id": "box-captions",
+    "name": "White box captions",
+    "group": "Captions & titles",
+    "credit": "@justyn.ai",
+    "use": "Clean alternative caption style for a calmer reel.",
+    "dur": 3.6
+  },
+  {
+    "id": "behind-title",
+    "name": "Title behind the head",
+    "group": "Captions & titles",
+    "credit": null,
+    "use": "Hook word or topic pinned to the wall, his head covers part of it.",
+    "dur": 1.5
+  },
+  {
+    "id": "masthead",
+    "name": "Magazine masthead",
+    "group": "Captions & titles",
+    "credit": "@justyn.ai",
+    "use": "One big word behind him, magazine-cover style.",
+    "dur": 1.6
+  },
+  {
+    "id": "cover-story",
+    "name": "Cover story",
+    "group": "Captions & titles",
+    "credit": "@tenfoldmarc",
+    "use": "Full magazine cover with coverlines: introductions, \"the story of\".",
+    "dur": 3.0
+  },
+  {
+    "id": "glass-type",
+    "name": "Glass type",
+    "group": "Captions & titles",
+    "credit": "@tenfoldmarc",
+    "use": "A frosted single word behind him: premium, quieter than the masthead.",
+    "dur": 2.6
+  },
+  {
+    "id": "gravity-drop",
+    "name": "Gravity drop",
+    "group": "Captions & titles",
+    "credit": "@justyn.ai",
+    "use": "Letters fall and bounce behind him: playful name drop.",
+    "dur": 1.77
+  },
+  {
+    "id": "paper-collage",
+    "name": "Paper collage",
+    "group": "Captions & titles",
+    "credit": "@tenfoldmarc",
+    "use": "Ransom-note letters on paper, him as a sticker: \"fake / not real\" moments.",
+    "dur": 2.6
+  },
+  {
+    "id": "stamp",
+    "name": "Stamp label",
+    "group": "Captions & titles",
+    "credit": "@justyn.ai",
+    "use": "Slams a verdict down: \"TAKEN CARE OF\", \"DONE\".",
+    "dur": 2.2
+  },
+  {
+    "id": "proof-card",
+    "name": "Proof card + chip",
+    "group": "Cards & UI",
+    "credit": null,
+    "use": "Show the real thing (a raw clip, a screenshot) with a stamp, then the result chip.",
+    "dur": 3.3
+  },
+  {
+    "id": "ref-cards",
+    "name": "Reference cards",
+    "group": "Cards & UI",
+    "credit": null,
+    "use": "Credit other creators: their reels pop in right to left with handles.",
+    "dur": 2.8
+  },
+  {
+    "id": "pull-into-hands",
+    "name": "Pull into hands",
+    "group": "Cards & UI",
+    "credit": null,
+    "use": "He grabs the cards and they fly into his fists: \"took the best of each\".",
+    "dur": 1.6
+  },
+  {
+    "id": "wall-cards",
+    "name": "Wall cards",
+    "group": "Cards & UI",
+    "credit": "@tenfoldmarc",
+    "use": "Cards taped to the wall behind him instead of floating in front.",
+    "dur": 3.4
+  },
+  {
+    "id": "prompt-bar",
+    "name": "Prompt bar",
+    "group": "Cards & UI",
+    "credit": null,
+    "use": "\"I asked Claude to...\": the request types itself and turns into a done line.",
+    "dur": 3.1
+  },
+  {
+    "id": "typed-comment",
+    "name": "Typed comment CTA",
+    "group": "Cards & UI",
+    "credit": "@robin.ebers",
+    "use": "Comment-to-get CTA: a comment types itself and sends.",
+    "dur": 2.9
+  },
+  {
+    "id": "profile-card",
+    "name": "Profile card",
+    "group": "Cards & UI",
+    "credit": "@taki.gpt",
+    "use": "Introduce himself: liquid-glass pill with avatar, handle and name.",
+    "dur": 4.0
+  },
+  {
+    "id": "follow-chip",
+    "name": "Follow chip",
+    "group": "Cards & UI",
+    "credit": null,
+    "use": "Final CTA above his head, no sound.",
+    "dur": 1.26
+  },
+  {
+    "id": "rec-ui",
+    "name": "Camera REC UI",
+    "group": "Cards & UI",
+    "credit": "@justyn.ai",
+    "use": "Hook: viewfinder grid, REC dot and timecode, feels raw.",
+    "dur": 1.36
+  },
+  {
+    "id": "file-drop",
+    "name": "Dropped file",
+    "group": "Cards & UI",
+    "credit": "@justyn.ai",
+    "use": "A file lands in an upload box: \"I gave it my footage\".",
+    "dur": 3.2
+  },
+  {
+    "id": "ticket",
+    "name": "Admit-one ticket",
+    "group": "Cards & UI",
+    "credit": "@justyn.ai",
+    "use": "Invitation or launch: \"front row seat\".",
+    "dur": 3.0
+  },
+  {
+    "id": "pip-self",
+    "name": "Picture in picture",
+    "group": "Cards & UI",
+    "credit": "@justyn.ai",
+    "use": "Show the reel inside the reel (meta moments, \"this video\").",
+    "dur": 3.0
+  },
+  {
+    "id": "style-cards",
+    "name": "Style presets",
+    "group": "Cards & UI",
+    "credit": "@justyn.ai",
+    "use": "Cycle looks: a card per preset while the footage grade changes to match.",
+    "dur": 3.6
+  },
+  {
+    "id": "storyboard-deck",
+    "name": "Storyboard deck",
+    "group": "Cards & UI",
+    "credit": "@justyn.ai",
+    "use": "Frames fan out like cards: planning, shot lists.",
+    "dur": 3.0
+  },
+  {
+    "id": "thumb-mosaic",
+    "name": "Thumbnail mosaic",
+    "group": "Cards & UI",
+    "credit": "@justyn.ai",
+    "use": "Full-screen wall of thumbnails: \"everywhere\", \"all over Instagram\".",
+    "dur": 3.0
+  },
+  {
+    "id": "arrow",
+    "name": "Drawn arrow",
+    "group": "Cards & UI",
+    "credit": null,
+    "use": "Point from a word to him (or to anything).",
+    "dur": 1.1
+  },
+  {
+    "id": "chapter-list",
+    "name": "Chapter list",
+    "group": "Lists & data",
+    "credit": "@justyn.ai",
+    "use": "\"In this video\": steps with a highlight moving down as he goes.",
+    "dur": 3.6
+  },
+  {
+    "id": "checklist",
+    "name": "Checklist",
+    "group": "Lists & data",
+    "credit": "@tenfoldmarc",
+    "use": "Ticks items off as he says them.",
+    "dur": 3.4
+  },
+  {
+    "id": "icon-badges",
+    "name": "Icon badges",
+    "group": "Lists & data",
+    "credit": null,
+    "use": "Icons instead of repeating words, left to right as he lists them.",
+    "dur": 3.4
+  },
+  {
+    "id": "icon-strike",
+    "name": "Icon strike",
+    "group": "Lists & data",
+    "credit": "@justyn.ai",
+    "use": "An icon gets crossed out: \"no more pauses\".",
+    "dur": 2.87
+  },
+  {
+    "id": "split-flap",
+    "name": "Split-flap board",
+    "group": "Lists & data",
+    "credit": "@justyn.ai",
+    "use": "Numbers flip like an airport board: before/after times.",
+    "dur": 3.24
+  },
+  {
+    "id": "chart-grow",
+    "name": "Chart grow",
+    "group": "Lists & data",
+    "credit": "@tenfoldmarc",
+    "use": "Bars change with his words: time spent, results.",
+    "dur": 5.4
+  },
+  {
+    "id": "nle-timeline",
+    "name": "Editing timeline",
+    "group": "Lists & data",
+    "credit": "@justyn.ai",
+    "use": "Video-editor tracks with a moving playhead.",
+    "dur": 3.2
+  },
+  {
+    "id": "jiggle-delete",
+    "name": "Jiggle delete",
+    "group": "Lists & data",
+    "credit": "@justyn.ai",
+    "use": "Bad takes wiggle and pop away.",
+    "dur": 3.0
+  },
+  {
+    "id": "tear-calendar",
+    "name": "Tear-off calendar",
+    "group": "Lists & data",
+    "credit": "@justyn.ai",
+    "use": "A day tears off: \"tomorrow\", deadlines, daily series.",
+    "dur": 3.4
+  },
+  {
+    "id": "bg-swaps",
+    "name": "Background swaps",
+    "group": "Background & cutout",
+    "credit": null,
+    "use": "Rapid new backgrounds on \"this, this and this\", with a flash.",
+    "dur": 2.0
+  },
+  {
+    "id": "orbit",
+    "name": "Photo orbit",
+    "group": "Background & cutout",
+    "credit": null,
+    "use": "His photos circle him, passing behind and in front.",
+    "dur": 2.1
+  },
+  {
+    "id": "green-screen",
+    "name": "Green screen reveal",
+    "group": "Background & cutout",
+    "credit": "@tenfoldmarc",
+    "use": "Green plate wipes away to the new background: behind-the-scenes feel.",
+    "dur": 3.2
+  },
+  {
+    "id": "frame-break",
+    "name": "Frame break",
+    "group": "Background & cutout",
+    "credit": "@tenfoldmarc",
+    "use": "He sits in a picture frame and his hands reach out of it.",
+    "dur": 3.0
+  },
+  {
+    "id": "doodle-boil",
+    "name": "Doodle boil",
+    "group": "Background & cutout",
+    "credit": "@tenfoldmarc",
+    "use": "Sticker outline with hand-drawn doodles that wobble.",
+    "dur": 4.0
+  },
+  {
+    "id": "vertigo",
+    "name": "Vertigo",
+    "group": "Background & cutout",
+    "credit": "@tenfoldmarc",
+    "use": "Background zooms while he stays still: realisation moments.",
+    "dur": 3.8
+  },
+  {
+    "id": "split-canvas",
+    "name": "Split canvas",
+    "group": "Background & cutout",
+    "credit": "@nicksaraev",
+    "use": "Light panel on top for UI or stats, him rising from the bottom.",
+    "dur": 4.1
+  },
+  {
+    "id": "punch-zoom",
+    "name": "Punch zoom",
+    "group": "Camera & transitions",
+    "credit": null,
+    "use": "Push in on his face for the hook line, then ease out.",
+    "dur": 2.2
+  },
+  {
+    "id": "cut-settle",
+    "name": "Settle on cuts",
+    "group": "Camera & transitions",
+    "credit": null,
+    "use": "Every jump cut starts 4% big and settles: hides the jump (always on).",
+    "dur": 1.6
+  },
+  {
+    "id": "digital-zoom",
+    "name": "Digital zoom",
+    "group": "Camera & transitions",
+    "credit": "@tenfoldmarc",
+    "use": "HUD punch-in with corner brackets: \"look at this\".",
+    "dur": 2.6
+  },
+  {
+    "id": "zoom-through",
+    "name": "Zoom-through cut",
+    "group": "Camera & transitions",
+    "credit": "@tenfoldmarc",
+    "use": "Rush into a point and land on the next shot: topic changes.",
+    "dur": 2.0
+  },
+  {
+    "id": "pull-back",
+    "name": "Pull-back reveal",
+    "group": "Camera & transitions",
+    "credit": "@tenfoldmarc",
+    "use": "The video shrinks into an app window: product reveals.",
+    "dur": 2.07
+  },
+  {
+    "id": "phone-mockup",
+    "name": "Phone mockup",
+    "group": "Camera & transitions",
+    "credit": "@tenfoldmarc",
+    "use": "The whole reel shrinks into a phone: \"on Instagram\", \"in the app\".",
+    "dur": 3.6
+  },
+  {
+    "id": "grade-slider",
+    "name": "Grade slider",
+    "group": "Camera & transitions",
+    "credit": "@justyn.ai",
+    "use": "Before/after wipe across the frame: colour, edits, any transformation.",
+    "dur": 3.6
+  },
+  {
+    "id": "serif-captions",
+    "name": "Serif emphasis captions",
+    "group": "Captions & titles",
+    "credit": "@iamajene",
+    "use": "Small captions word by word; the key word lands as a big orange serif italic.",
+    "dur": 5.6
+  },
+  {
+    "id": "font-switch",
+    "name": "Font switch captions",
+    "group": "Captions & titles",
+    "credit": "@iamajene",
+    "use": "Each phrase in a new font with a font-name chip and a picker: \"change the font\", style talk.",
+    "dur": 3.4
+  },
+  {
+    "id": "kinetic-type",
+    "name": "Kinetic type",
+    "group": "Captions & titles",
+    "credit": "@iamajene",
+    "use": "Cut to a solid color, one big word at a time: a beat between talking parts.",
+    "dur": 3.8
+  },
+  {
+    "id": "number-roll",
+    "name": "Number roll-up",
+    "group": "Lists & data",
+    "credit": "@iamajene",
+    "use": "A big number counts to its value: \"147 seconds to 44\", follower counts, totals.",
+    "dur": 3.4
+  },
+  {
+    "id": "streak-grid",
+    "name": "Posting streak",
+    "group": "Lists & data",
+    "credit": "@iamajene",
+    "use": "Profile card whose day grid fills (Day 0, 7, 27): consistency, challenges, build in public.",
+    "dur": 2.9
+  },
+  {
+    "id": "take-filmstrip",
+    "name": "Take filmstrip",
+    "group": "Lists & data",
+    "credit": "@iamajene",
+    "use": "Strip of takes; the bad ones get an X, fall away and the strip closes: \"it cut my mistakes\".",
+    "dur": 2.8
+  },
+  {
+    "id": "tier-list",
+    "name": "Tier list",
+    "group": "Lists & data",
+    "credit": "@iamajene",
+    "use": "S to D rows; each item pops in big and drops into its tier: rankings and comparisons.",
+    "dur": 3.2
+  },
+  {
+    "id": "menu-follow",
+    "name": "Menu that follows",
+    "group": "Cards & UI",
+    "credit": "@iamajene",
+    "use": "White menu over an app-icon wall; the highlight moves to each item as he says it.",
+    "dur": 6.2
+  },
+  {
+    "id": "icon-flow",
+    "name": "Icon flow",
+    "group": "Cards & UI",
+    "credit": "@iamajene",
+    "use": "Icon, arrow, icon on the chest: a process in 2 to 4 steps (\"record, notes, edited\").",
+    "dur": 2.6
+  },
+  {
+    "id": "notif-badges",
+    "name": "Notification badges",
+    "group": "Cards & UI",
+    "credit": "@iamajene",
+    "use": "App tiles float behind his head and get red badges: \"all over Instagram\", busy, popular.",
+    "dur": 3.2
+  },
+  {
+    "id": "series-badge",
+    "name": "Series badge",
+    "group": "Captions & titles",
+    "credit": "@iamajene",
+    "use": "Pill at the top naming the series and episode (\"Ep 3\"): makes a run of videos feel like a show.",
+    "dur": 2.6
+  },
+  {
+    "id": "snap-zoom",
+    "name": "Snap zoom",
+    "group": "Camera & transitions",
+    "credit": "@taki.gpt",
+    "use": "Motion-blurred whip onto his face and back: punchline, surprise, emphasis.",
+    "dur": 2.4
+  },
+  {
+    "id": "headline-storm",
+    "name": "Headline storm",
+    "group": "Captions & titles",
+    "credit": "@taki.gpt",
+    "use": "Tilted headline strips fly in from both sides around him: \"everyone is talking about this\".",
+    "dur": 3.0
+  },
+  {
+    "id": "growth-curve",
+    "name": "Growth curve",
+    "group": "Lists & data",
+    "credit": "@taki.gpt",
+    "use": "Glowing line chart draws upward to a label: growth, more, faster (no invented numbers).",
+    "dur": 3.2
+  },
+  {
+    "id": "zoom-portal",
+    "name": "Zoom portal",
+    "group": "Camera & transitions",
+    "credit": "@taki.gpt",
+    "use": "A small window of another moment opens, then the camera rushes through it: \"like this\".",
+    "dur": 2.4
+  },
+  {
+    "id": "frame-escape",
+    "name": "Frame escape",
+    "group": "Background & cutout",
+    "credit": "@taki.gpt",
+    "use": "White frame tilts in with the world dimmed; his head and hands break out of it.",
+    "dur": 2.0
+  },
+  {
+    "id": "chat-takeover",
+    "name": "Chat takeover",
+    "group": "Cards & UI",
+    "credit": "@taki.gpt",
+    "use": "Claude chat with his request and the video attached; the reply ticks off each step.",
+    "dur": 3.0
+  },
+  {
+    "id": "studio-reveal",
+    "name": "Studio reveal",
+    "group": "Background & cutout",
+    "credit": "@taki.gpt",
+    "use": "Room becomes a dark studio with softboxes and an ON AIR sign that flickers on.",
+    "dur": 2.6
+  },
+  {
+    "id": "comment-notif",
+    "name": "Comment notifications",
+    "group": "Cards & UI",
+    "credit": "@iamajene",
+    "use": "iPhone-style notifications stack up (\"commented: EDIT\", \"started following you\"): CTA.",
+    "dur": 2.9
+  },
+  {
+    "id": "strike-title",
+    "name": "Strike-through title",
+    "group": "Captions & titles",
+    "credit": "@cooper.simson",
+    "use": "Bold title; a red line strikes one word and the real word drops in above it: \"I can edit\" becomes \"I can’t edit\".",
+    "dur": 2.9
+  },
+  {
+    "id": "mono-captions",
+    "name": "Mono caption chips",
+    "group": "Captions & titles",
+    "credit": "@cooper.simson",
+    "use": "Uppercase monospace captions in a black bar; the spoken word sits on a blue box.",
+    "dur": 3.2
+  },
+  {
+    "id": "wired-cards",
+    "name": "Wired cards",
+    "group": "Lists & data",
+    "credit": "@cooper.simson",
+    "use": "Full-screen: six wired cards turn red with X marks, then collapse into one card: \"too many tools\".",
+    "dur": 2.8
+  },
+  {
+    "id": "cycle-diagram",
+    "name": "Cycle diagram",
+    "group": "Lists & data",
+    "credit": "@cooper.simson",
+    "use": "Full-screen: a ring draws around a center card and numbered steps pop onto it: a loop or system.",
+    "dur": 2.6
+  },
+  {
+    "id": "search-pill",
+    "name": "Search pill",
+    "group": "Cards & UI",
+    "credit": "@iamajene",
+    "use": "Search bar types a name or URL and the button pulses: \"look it up\", CTA.",
+    "dur": 3.2
+  },
+  {
+    "id": "word-by-word-captions",
+    "name": "Word-by-word captions",
+    "group": "Captions & titles",
+    "credit": null,
+    "use": "Each word pops in big on its own: fast, punchy lines and the key word of a sentence.",
+    "dur": 4.0
+  },
+  {
+    "id": "status-chip",
+    "name": "Status chip",
+    "group": "Cards & UI",
+    "credit": null,
+    "use": "A small green 'Ready!' pill with a detail (download, done, saved): proof that something happened.",
+    "dur": 4.0
+  },
+  {
+    "id": "icon-sequence",
+    "name": "Icon per word",
+    "group": "Lists & data",
+    "credit": null,
+    "use": "Each word of a list gets its own icon, big and centred (remove / add / create).",
+    "dur": 4.0
+  },
+  {
+    "id": "light-flare",
+    "name": "Light-flare transition",
+    "group": "Camera & transitions",
+    "credit": null,
+    "use": "A white light sweeps across the frame: a glossy cut between two beats.",
+    "dur": 4.0
+  },
+  {
+    "id": "giant-word",
+    "name": "Giant single word",
+    "group": "Captions & titles",
+    "credit": null,
+    "use": "One word fills the whole frame for a beat: the single most important word.",
+    "dur": 4.0
+  },
+  {
+    "id": "labelled-card",
+    "name": "Labelled image card",
+    "group": "Background & cutout",
+    "credit": null,
+    "use": "A full-screen image with a name tag at the top (a brand, a person, a place).",
+    "dur": 4.0
+  },
+  {
+    "id": "rapid-cards",
+    "name": "Rapid labelled cards",
+    "group": "Background & cutout",
+    "credit": null,
+    "use": "Labelled images cut back to back, each held about a second: a quick list of examples.",
+    "dur": 4.0
+  },
+  {
+    "id": "chat-takeover-v2",
+    "name": "Chat takeover (variant)",
+    "group": "Cards & UI",
+    "credit": null,
+    "use": "A chat panel slides up over the frame and messages land one by one: show a real conversation with Claude.",
+    "dur": 4.0
+  },
+  {
+    "id": "frame-escape-v2",
+    "name": "Frame escape (variant)",
+    "group": "Background & cutout",
+    "credit": null,
+    "use": "A framed picture on the wall grows and fades as he breaks out of it.",
+    "dur": 4.0
+  },
+  {
+    "id": "snap-zoom-v2",
+    "name": "Snap zoom (variant)",
+    "group": "Camera & transitions",
+    "credit": null,
+    "use": "A hard punch-in on a beat (0.08s in, back out): emphasis on one line.",
+    "dur": 4.0
+  },
+  {
+    "id": "headline-storm-v2",
+    "name": "Headline storm (variant)",
+    "group": "Captions & titles",
+    "credit": null,
+    "use": "Headline tags stack and shake in one after another: a list of claims.",
+    "dur": 4.0
+  },
+  {
+    "id": "zoom-portal-v2",
+    "name": "Zoom portal (variant)",
+    "group": "Camera & transitions",
+    "credit": null,
+    "use": "A small picture grows to fill the whole frame: the window becomes the next scene.",
+    "dur": 4.0
+  },
+  {
+    "id": "growth-curve-v2",
+    "name": "Growth curve (variant)",
+    "group": "Lists & data",
+    "credit": null,
+    "use": "A red line chart draws upward with a big number counting up: growth, results.",
+    "dur": 4.0
+  },
+  {
+    "id": "studio-reveal-v2",
+    "name": "Studio ON AIR reveal (variant)",
+    "group": "Cards & UI",
+    "credit": null,
+    "use": "A red ON AIR badge flips on with a glow: you're live, the reel is on.",
+    "dur": 4.0
+  },
+  {
+    "id": "broll-overlay",
+    "name": "B-roll overlay",
+    "group": "Background & cutout",
+    "credit": null,
+    "use": "Footage slides into a top panel while he stays in the room below: show a clip while he talks.",
+    "dur": 4.0
+  },
+  {
+    "id": "dolly-zoom",
+    "name": "Dolly zoom",
+    "group": "Camera & transitions",
+    "credit": null,
+    "use": "The background rushes in while he stays the same size: a dramatic realisation.",
+    "dur": 4.0
+  },
+  {
+    "id": "scatter-word",
+    "name": "Scatter word",
+    "group": "Captions & titles",
+    "credit": null,
+    "use": "A word's letters fly apart from the centre: a key word breaks apart.",
+    "dur": 4.0
+  },
+  {
+    "id": "torn-paper",
+    "name": "Torn-paper label",
+    "group": "Captions & titles",
+    "credit": null,
+    "use": "A torn strip of paper with a line of text lands on the frame: a note or a quote.",
+    "dur": 4.0
+  },
+  {
+    "id": "match-cut",
+    "name": "Match cut",
+    "group": "Camera & transitions",
+    "credit": null,
+    "use": "A yellow circle grows to fill the frame and clears to the next shot: a shape-based cut.",
+    "dur": 4.0
+  },
+  {
+    "id": "shutter-strike",
+    "name": "Shutter strike",
+    "group": "Camera & transitions",
+    "credit": null,
+    "use": "Two black bars slam together and open on the next shot: a hard, punchy cut.",
+    "dur": 4.0
+  },
+  {
+    "id": "screen-push-digital",
+    "name": "Screen push (digital)",
+    "group": "Camera & transitions",
+    "credit": null,
+    "use": "The shot slides out and the next slides in, with a red dot-grid wipe in between.",
+    "dur": 4.0
+  },
+  {
+    "id": "inset-zoom",
+    "name": "Over-the-shoulder inset",
+    "group": "Background & cutout",
+    "credit": null,
+    "use": "A small rounded inset in the corner while the main frame pushes in: show the reference while he talks.",
+    "dur": 4.0
+  },
+  {
+    "id": "dot-grid-reveal",
+    "name": "Dot-grid reveal",
+    "group": "Captions & titles",
+    "credit": null,
+    "use": "A red dot-grid fills the frame and a line of text appears through it: a bold statement.",
+    "dur": 4.0
+  },
+  {
+    "id": "liquid-chart",
+    "name": "Liquid-glass chart",
+    "group": "Lists & data",
+    "credit": null,
+    "use": "A frosted glass card with a rising line and a big percentage: a result, a stat.",
+    "dur": 4.0
+  },
+  {
+    "id": "knockout-captions",
+    "name": "Knockout captions",
+    "group": "Captions & titles",
+    "credit": "@justyn.ai",
+    "use": "White box captions with the words cut out of the box: you see the video through the letters.",
+    "dur": 4.0
+  },
+  {
+    "id": "live-markup",
+    "name": "Live markup",
+    "group": "Captions & titles",
+    "credit": "@justyn.ai",
+    "use": "A red marker circles his face with an arrow and a scribbled word: point at yourself, \"this is me\".",
+    "dur": 4.0
+  },
+  {
+    "id": "film-look",
+    "name": "Film look",
+    "group": "Camera & transitions",
+    "credit": "@justyn.ai",
+    "use": "Warm faded grade, grain, gate weave and sprocket strips: a memory, a throwback, \"the old way\".",
+    "dur": 4.0
+  },
+  {
+    "id": "screenplay-page",
+    "name": "Screenplay page",
+    "group": "Cards & UI",
+    "credit": "@justyn.ai",
+    "use": "A typewritten script page types itself and highlights one line: the plan, the script, what he told Claude.",
+    "dur": 4.0
+  },
+  {
+    "id": "grid-collapse",
+    "name": "Grid collapse",
+    "group": "Lists & data",
+    "credit": "@justyn.ai",
+    "use": "A 3x3 grid of clips fills the frame then folds into the centre: lots of options becoming one.",
+    "dur": 4.0
+  },
+  {
+    "id": "contact-sheet-hook",
+    "name": "Contact sheet hook",
+    "group": "Lists & data",
+    "credit": "@justyn.ai",
+    "use": "His own frames on a contact sheet; one gets circled and zooms to fill: picking the best take.",
+    "dur": 4.0
+  },
+  {
+    "id": "keycaps",
+    "name": "Keycaps",
+    "group": "Cards & UI",
+    "credit": "@justyn.ai",
+    "use": "Chunky keyboard keys press one by one: a shortcut, or a word spelled out on the keys.",
+    "dur": 4.0
+  },
+  {
+    "id": "picture-dive",
+    "name": "Picture dive",
+    "group": "Camera & transitions",
+    "credit": "@justyn.ai",
+    "use": "A photo on the wall; the camera dives into it and back out: going into a memory or an example.",
+    "dur": 4.0
+  },
+  {
+    "id": "playing-grid",
+    "name": "Playing grid",
+    "group": "Lists & data",
+    "credit": "@justyn.ai",
+    "use": "Six reels on the wall all playing at once (push + progress bars): lots of videos, a body of work.",
+    "dur": 4.0
+  },
+  {
+    "id": "serif-stamp",
+    "name": "Serif stamp",
+    "group": "Captions & titles",
+    "credit": "@justyn.ai",
+    "use": "A big serif italic word stamped on the wall behind him with a jolt: one elegant key word.",
+    "dur": 4.0
+  },
+  {
+    "id": "grease-pencil-sheet",
+    "name": "Grease pencil sheet",
+    "group": "Lists & data",
+    "credit": "@justyn.ai",
+    "use": "A film strip on a light table: two frames crossed out, one circled \"keep\": choosing what stays.",
+    "dur": 4.0
+  },
+  {
+    "id": "lens-ring",
+    "name": "Lens ring",
+    "group": "Camera & transitions",
+    "credit": "@justyn.ai",
+    "use": "A focal-length ring scrolls 85, 70, 50, 35 while the shot racks into focus: a camera or gear beat.",
+    "dur": 4.0
+  },
+  {
+    "id": "reel-cascade",
+    "name": "Reel cascade",
+    "group": "Cards & UI",
+    "credit": "@justyn.ai",
+    "use": "Reels drop in one after another into a fanned stack behind him: \"all of these\", examples.",
+    "dur": 4.0
+  },
+  {
+    "id": "kicker-number",
+    "name": "Kicker + big number",
+    "group": "Lists & data",
+    "credit": "@justyn.ai",
+    "use": "A panel with a small mono kicker (\"WELL OVER\") over a big number counting up: a stat.",
+    "dur": 4.0
+  },
+  {
+    "id": "title-card",
+    "name": "Full-bleed title card",
+    "group": "Captions & titles",
+    "credit": "@justyn.ai",
+    "use": "The whole frame becomes a brand panel with a kicker and a huge title: a deadline, a chapter.",
+    "dur": 4.0
+  },
+  {
+    "id": "version-tag",
+    "name": "Version tag",
+    "group": "Cards & UI",
+    "credit": "@justyn.ai",
+    "use": "A small \"v0.4.6\" chip with a live dot: it is a real product and it keeps getting updated.",
+    "dur": 4.0
+  },
+  {
+    "id": "side-panels",
+    "name": "Labelled side panels",
+    "group": "Cards & UI",
+    "credit": "@justyn.ai",
+    "use": "Two tall labelled panels slide in from the edges (PHONE | PRO SETUP): this vs that.",
+    "dur": 4.0
+  },
+  {
+    "id": "numbered-columns",
+    "name": "Numbered columns",
+    "group": "Lists & data",
+    "credit": "@justyn.ai",
+    "use": "01 / 02 / 03 columns rise in with a title and lines each: three steps, three bonuses.",
+    "dur": 4.0
+  },
+  {
+    "id": "ui-world",
+    "name": "UI world",
+    "group": "Cards & UI",
+    "credit": "@tenfoldmarc",
+    "use": "He is surrounded by the app: a prompt types and fills to 100%, a timeline runs, the result pops in.",
+    "dur": 4.0
+  },
+  {
+    "id": "sticky-text",
+    "name": "Sticky text",
+    "group": "Captions & titles",
+    "credit": "@tenfoldmarc",
+    "use": "A yellow sticky label slaps on and later peels off: a quick note or claim.",
+    "dur": 4.0
+  },
+  {
+    "id": "before-after",
+    "name": "Before + after wipe",
+    "group": "Camera & transitions",
+    "credit": "@tenfoldmarc",
+    "use": "A labelled line wipes across: flat \"before\" on one side, graded \"after\" on the other.",
+    "dur": 4.0
+  },
+  {
+    "id": "depth-scatter",
+    "name": "Depth scatter",
+    "group": "Captions & titles",
+    "credit": "@tenfoldmarc",
+    "use": "A huge word deep behind him; its letters fly apart in depth: a word that breaks.",
+    "dur": 4.0
+  },
+  {
+    "id": "question-pill",
+    "name": "Question pill hook",
+    "group": "Captions & titles",
+    "credit": "@tenfoldmarc",
+    "use": "A white question pill at the top: \"Can Claude...?\" hooks that the video answers.",
+    "dur": 4.0
+  },
+  {
+    "id": "polaroid",
+    "name": "Polaroid + sticker",
+    "group": "Cards & UI",
+    "credit": "@tenfoldmarc",
+    "use": "A polaroid tossed onto the frame with a red sticker word (\"spoiler.\"): a photo with attitude.",
+    "dur": 4.0
+  },
+  {
+    "id": "clip-tab",
+    "name": "Labelled clip tab",
+    "group": "Cards & UI",
+    "credit": "@tenfoldmarc",
+    "use": "A clip card with a yellow tab on its corner naming it (RAW FOOTAGE, CLAUDE'S EDIT).",
+    "dur": 4.0
+  },
+  {
+    "id": "pixel-shelf",
+    "name": "Pixel scene: shelf",
+    "group": "Background & cutout",
+    "credit": "@opusjake",
+    "use": "A pixel-art room in the top panel: our sticky-note creature walks in, cartridges drop onto a shelf, a \"?\" pops, a crown lands. Build any pixel scene from pixel.py pieces.",
+    "dur": 5.0
+  },
+  {
+    "id": "ui-dashboard",
+    "name": "Rebuilt app + cursor",
+    "group": "Cards & UI",
+    "credit": "@opusjake",
+    "use": "A rebuilt app window in the top panel: the cursor switches tabs, opens a reply, types it, sends it, ticks a to-do.",
+    "dur": 8.0
+  },
+  {
+    "id": "page-github",
+    "name": "Page B-roll: GitHub repo",
+    "group": "Cards & UI",
+    "credit": "@nicksaraev",
+    "use": "A real page (captured with tools/capture.mjs) in a browser window: the camera zooms to the text he mentions, a marker sweeps it, a circle draws, a stat card pops.",
+    "dur": 8.0
+  }
+]

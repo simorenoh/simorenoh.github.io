@@ -1,117 +1,41 @@
-# GitHub Pages Deployment Guide
+# Deployment
 
-## Quick Deployment Steps
+GitHub Pages uses GitHub Actions, not a branch-directory build. A push to `main`
+or a manual run of **Deploy personal website** builds and publishes the site.
 
-### 1. Repository Setup
-Your repository should already be named `simorenoh.github.io` (or `yourusername.github.io`)
+## How media reaches the site
 
-### 2. Enable GitHub Pages
-1. Go to your repository on GitHub
-2. Click **Settings** tab
-3. Scroll down to **Pages** section in the left sidebar
-4. Under **Source**, select "Deploy from a branch"
-5. Choose **main** branch
-6. Leave folder as **/ (root)**
-7. Click **Save**
+The source repository contains HTML, CSS, JavaScript, effect metadata, a media
+manifest, and the build workflow. Media files are never committed.
 
-### 3. Wait for Deployment
-- Initial deployment takes 5-10 minutes
-- You'll see a green checkmark when ready
-- Visit `https://yourusername.github.io` to see your site
+`media-manifest.json` pins a release archive by URL, SHA-256, and file count.
+`scripts/build.py` downloads and verifies it, extracts only regular files under
+`media/` and `fonts/`, and assembles `dist/`. GitHub's Pages artifact actions
+publish the complete directory. Videos and images use the same GitHub.io origin
+as the page.
 
-### 4. Custom Domain (Optional)
-If you have a custom domain:
-1. Add a `CNAME` file with your domain name
-2. Configure DNS settings with your domain provider
-3. Enable HTTPS in repository settings
+The bundle contains selected finished reels, effect demo clips/posters, covers,
+workflow screenshots, a portrait, and licensed fonts. No raw recordings, editor
+source, credentials, or unrelated private project files.
 
-## Making Updates
+## Updating text or layout
 
-### Content Updates
-1. Edit files locally or directly on GitHub
-2. Commit and push changes
-3. Changes appear live within 1-2 minutes
+Edit source files, validate JavaScript with `node --check app.js`, build with
+`python3 scripts/build.py`, and push to `main`. The pinned media is reused.
 
-### Admin Mode Updates
-- Use the admin panel on your live site
-- Data persists in browser localStorage
-- For permanent changes, update the default data in `script.js`
+## Updating media
 
-## Troubleshooting
+Prepare only assets intended for publication in a new `.tar.gz` release asset.
+Use a new release tag, never replace a bundle already pinned by a deployed commit.
+Update the URL, SHA-256, and file count in `media-manifest.json`, then build and push.
+The checksum prevents publication of a changed or incomplete bundle.
 
-### Site Not Loading
-- Check repository name matches `username.github.io`
-- Ensure GitHub Pages is enabled
-- Wait 10 minutes after first setup
+## Rollback
 
-### Changes Not Appearing
-- Hard refresh browser (Ctrl+F5 or Cmd+Shift+R)
-- Check GitHub Actions tab for build status
-- Clear browser cache
+Restore the last known good source commit and matching media manifest on `main`,
+then run the workflow. Keep referenced releases for reproducible builds. Earlier
+source remains in Git history; the former branch-based homepage was commit
+`fa2dec0` before the editorial redesign.
 
-### 404 Errors
-- Ensure `index.html` is in root directory
-- Check file names are correct (case-sensitive)
-
-## Performance Tips
-
-### Optimization
-- Images: Use WebP format when possible
-- Keep file sizes under 1MB
-- Minimize external dependencies
-
-### SEO
-- Update meta tags in `index.html`
-- Add structured data for better search results
-- Include descriptive alt text for images
-
-## Security Notes
-
-### Admin Password
-- Change the default password in `script.js`
-- Use a strong, unique password
-- Never commit passwords to public repositories
-
-### Contact Form
-- The included form is demo only
-- For real functionality, integrate with:
-  - [Formspree](https://formspree.io/)
-  - [Netlify Forms](https://www.netlify.com/products/forms/)
-  - [EmailJS](https://www.emailjs.com/)
-
-## Advanced Features
-
-### Analytics
-Add Google Analytics by including the tracking code in `index.html`:
-
-```html
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'GA_TRACKING_ID');
-</script>
-```
-
-### PWA Features
-To make your site a Progressive Web App:
-1. Add a `manifest.json` file
-2. Implement service worker for offline functionality
-3. Add app icons
-
-### Database Integration
-For persistent data storage:
-1. Use GitHub API to update files programmatically
-2. Integrate with headless CMS like Strapi or Contentful
-3. Use Firebase for real-time data
-
-## Resources
-
-- [GitHub Pages Documentation](https://docs.github.com/en/pages)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [Web Accessibility Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
-- [PWA Checklist](https://web.dev/pwa-checklist/)
-
-Happy deploying! 🚀
+Deployment status is visible in the repository's Actions tab and GitHub Pages
+environment. Check the public homepage and representative media after deployment.

@@ -1,0 +1,18 @@
+# Media is deployed as a release-backed artifact, never committed.
+media/
+fonts/
+dist/
+__pycache__/
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.gif
+*.mp4
+*.mov
+*.webm
+*.mp3
+*.wav
+*.tar.gz
+*.zip
+.DS_Store
