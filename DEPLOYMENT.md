@@ -1,41 +1,34 @@
-# Deployment
+# GitHub Pages deployment
 
-GitHub Pages uses GitHub Actions, not a branch-directory build. A push to `main`
-or a manual run of **Deploy personal website** builds and publishes the site.
+Push to `main` or run **Deploy personal website** to publish the source and pinned
+media through GitHub Actions. Pages must use GitHub Actions as its publishing source.
 
-## How media reaches the site
+## Public scope
 
-The source repository contains HTML, CSS, JavaScript, effect metadata, a media
-manifest, and the build workflow. Media files are never committed.
+The approved media bundle contains exactly 250 files: 125 effect demo MP4s and
+125 JPG posters, all under `media/effects/`. No other videos, images, or local
+assets are published. The full local homepage preview contains private assets
+and must not be copied over this public version.
 
-`media-manifest.json` pins a release archive by URL, SHA-256, and file count.
-`scripts/build.py` downloads and verifies it, extracts only regular files under
-`media/` and `fonts/`, and assembles `dist/`. GitHub's Pages artifact actions
-publish the complete directory. Videos and images use the same GitHub.io origin
-as the page.
+`media-manifest.json` pins a GitHub release URL, SHA-256 checksum, and file count.
+`scripts/build.py` verifies and extracts only the exact effect filenames in the
+catalog. It rejects non-regular files, unexpected paths, and extra media. It
+checks both HTML pages and the final deployment file list before publishing.
 
-The bundle contains selected finished reels, effect demo clips/posters, covers,
-workflow screenshots, a portrait, and licensed fonts. No raw recordings, editor
-source, credentials, or unrelated private project files.
+Media is uploaded as a release asset and assembled into the Pages artifact. It
+is never committed to Git. The public homepage and `/effects/` use same-origin
+URLs for playback and posters. The original private content workspace stays private.
 
-## Updating text or layout
+## Updates
 
-Edit source files, validate JavaScript with `node --check app.js`, build with
-`python3 scripts/build.py`, and push to `main`. The pinned media is reused.
-
-## Updating media
-
-Prepare only assets intended for publication in a new `.tar.gz` release asset.
-Use a new release tag, never replace a bundle already pinned by a deployed commit.
-Update the URL, SHA-256, and file count in `media-manifest.json`, then build and push.
-The checksum prevents publication of a changed or incomplete bundle.
+Edit source, run `node --check app.js` and `python3 scripts/build.py`, and push.
+For effect changes, create a new effects-only bundle and release tag; update the
+manifest checksum, file count, and catalog together. Do not replace a bundle
+referenced by a deployed commit. Do not add non-effect media without Simon's
+explicit instruction.
 
 ## Rollback
 
-Restore the last known good source commit and matching media manifest on `main`,
-then run the workflow. Keep referenced releases for reproducible builds. Earlier
-source remains in Git history; the former branch-based homepage was commit
-`fa2dec0` before the editorial redesign.
-
-Deployment status is visible in the repository's Actions tab and GitHub Pages
-environment. Check the public homepage and representative media after deployment.
+Restore a known good source commit and matching manifest on main, then run the
+workflow. Keep referenced releases available for reproducible builds. The original
+branch-based homepage was commit `fa2dec0` before this redesign.

@@ -11,7 +11,7 @@ from pathlib import Path, PurePosixPath
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parent.parent
-SOURCE_FILES = ('index.html', 'style.css', 'app.js', 'effects.json')
+SOURCE_FILES = ('index.html', 'style.css', 'app.js', 'effects.json', 'effects/index.html')
 
 
 def build(archive_path=None):
@@ -21,6 +21,7 @@ def build(archive_path=None):
         shutil.rmtree(output)
     output.mkdir()
     for name in SOURCE_FILES:
+        (output / name).parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(ROOT / name, output / name)
     with tempfile.TemporaryDirectory(prefix='homepage-assets-') as temporary:
         if archive_path:
@@ -42,10 +43,14 @@ def build(archive_path=None):
             members = bundle.getmembers()
             if len(members) != manifest['file_count']:
                 raise ValueError('Unexpected media file count.')
+            catalog = json.loads((ROOT / 'effects.json').read_text())
+            expected_names = {f'media/effects/{effect["id"]}.{ext}' for effect in catalog for ext in ('jpg', 'mp4')}
+            if {member.name for member in members} != expected_names:
+                raise ValueError('The bundle must contain only the catalogued effect clips and posters.')
             for member in members:
                 path = PurePosixPath(member.name)
                 if (not member.isfile() or path.is_absolute() or '..' in path.parts
-                        or not path.parts or path.parts[0] not in {'media', 'fonts'}):
+                        or not path.parts or path.parts[:2] != ('media', 'effects')):
                     raise ValueError(f'Unexpected media archive entry: {member.name}')
             bundle.extractall(output, filter='data')
     (output / '.nojekyll').touch()
@@ -58,23 +63,30 @@ def validate(output):
         def handle_starttag(self, tag, attrs):
             for key, value in attrs:
                 if key in {'src', 'href'} and value and not value.startswith(('https:', 'http:', 'data:', '#', 'mailto:')):
-                    if not (output / value).is_file():
+                    target = output / value.lstrip('/')
+                    if value.endswith('/'):
+                        target /= 'index.html'
+                    if not target.is_file():
                         raise ValueError(f'Missing page asset: {value}')
-    AssetParser().feed((output / 'index.html').read_text())
-    for name in re.findall(r"url\('([^']+)'\)", (output / 'style.css').read_text()):
-        if not (output / name).is_file():
-            raise ValueError(f'Missing font: {name}')
+                if tag in {'img', 'video'} and key in {'src', 'poster'}:
+                    if not value.startswith('/media/effects/'):
+                        raise ValueError(f'Unapproved media reference: {value}')
+    for name in ('index.html', 'effects/index.html'):
+        AssetParser().feed((output / name).read_text())
     catalog = json.loads((output / 'effects.json').read_text())
     if len({effect['id'] for effect in catalog}) != len(catalog):
         raise ValueError('Duplicate effect IDs.')
     for effect in catalog:
+        if not re.fullmatch('[a-z0-9-]+', effect['id']):
+            raise ValueError('Invalid effect ID.')
         for extension in ('jpg', 'mp4'):
             if not (output / f'media/effects/{effect["id"]}.{extension}').is_file():
                 raise ValueError(f'Missing effect asset: {effect["id"]}.{extension}')
-    for slug in ('easier', 'problems', 'fear'):
-        if not (output / f'media/{slug}.mp4').is_file():
-            raise ValueError(f'Missing reel: {slug}')
-    print(f'Validated {len(catalog)} effect pairs, 3 reels, HTML assets, and fonts.')
+    allowed = set(SOURCE_FILES) | {'.nojekyll'} | {f'media/effects/{e["id"]}.{ext}' for e in catalog for ext in ('jpg', 'mp4')}
+    actual = {p.relative_to(output).as_posix() for p in output.rglob('*') if p.is_file()}
+    if actual != allowed:
+        raise ValueError('Unexpected or missing files in the public artifact.')
+    print(f'Validated {len(catalog)} effect pairs and both pages. No other media is included.')
 
 
 if __name__ == '__main__':
