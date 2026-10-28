@@ -11,6 +11,8 @@
 .effect-preview-wall{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:10px;background:#f9f7ed;border:1px solid #d5d7ca;border-radius:0 0 4px 4px}
 .effect-preview-wall button{position:relative;padding:0;background:#e8e7da;overflow:hidden;border-radius:2px;aspect-ratio:9/12}
 .effect-preview-wall img{width:100%;height:100%;object-fit:cover}.effect-preview-wall button>span{position:absolute;bottom:0;left:0;right:0;font-size:6px;padding:9px 4px 5px;background:linear-gradient(transparent,#111b12ce);color:white}
+.effect-card .hover-preview{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;pointer-events:none;z-index:1;transition:opacity .15s}
+.effect-card .effect-category,.effect-card .play-circle{z-index:2}.effect-card .is-previewing .hover-preview{opacity:1}.effect-card .is-previewing .play-circle{opacity:0}
 .editor-diagram{background:#e4e7dc}.about-monogram{aspect-ratio:1;border:1px solid #a9b294;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;max-width:300px;color:#788560;background:#e0e5d5}
 .about-monogram>span{font-family:Georgia,serif;font-size:110px;line-height:1.2;letter-spacing:-9px}.about-monogram>small{font-size:8px;letter-spacing:2px;margin-top:8px}.inline-link{text-decoration:underline;text-underline-offset:3px}
 .library-intro{padding-top:70px;padding-bottom:10px}.library-intro h1{font-size:78px;margin-top:20px}.library-intro>p:not(.eyebrow){max-width:600px;font-size:14px;margin-top:25px}.library-intro>.text-link{margin-top:22px}.library-page .lab{padding-top:60px}

@@ -9,6 +9,7 @@ import tempfile
 from html.parser import HTMLParser
 from pathlib import Path, PurePosixPath
 from urllib.request import Request, urlopen
+from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE_FILES = ('index.html', 'style.css', 'app.js', 'effects.json', 'effects/index.html')
@@ -63,8 +64,9 @@ def validate(output):
         def handle_starttag(self, tag, attrs):
             for key, value in attrs:
                 if key in {'src', 'href'} and value and not value.startswith(('https:', 'http:', 'data:', '#', 'mailto:')):
-                    target = output / value.lstrip('/')
-                    if value.endswith('/'):
+                    asset_path = urlsplit(value).path
+                    target = output / asset_path.lstrip('/')
+                    if asset_path.endswith('/'):
                         target /= 'index.html'
                     if not target.is_file():
                         raise ValueError(f'Missing page asset: {value}')

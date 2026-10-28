@@ -6,6 +6,66 @@ let effects = [];
 let activeFilter = 'all';
 let expanded = allPage;
 let lastTrigger;
+let hoverPreview = null;
+const hoverPointer = window.matchMedia('(any-hover: hover) and (any-pointer: fine)');
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+function stopHoverPreview() {
+  const previous = hoverPreview;
+  hoverPreview = null;
+  if (!previous) return;
+  window.clearTimeout(previous.timer);
+  previous.button.classList.remove('is-previewing');
+  if (previous.video) {
+    previous.video.pause();
+    previous.video.removeAttribute('src');
+    previous.video.load();
+    previous.video.remove();
+  }
+}
+
+function enableHoverPreview(button, effect) {
+  button.addEventListener('pointerenter', event => {
+    if (event.pointerType !== 'mouse' || !hoverPointer.matches || reducedMotion.matches || dialog.open) return;
+    stopHoverPreview();
+    const state = {button, video: null, timer: null};
+    hoverPreview = state;
+    state.timer = window.setTimeout(() => {
+      if (hoverPreview !== state || !button.isConnected) return;
+      const video = el('video', 'hover-preview');
+      state.video = video;
+      video.muted = true;
+      video.defaultMuted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.preload = 'none';
+      video.tabIndex = -1;
+      video.setAttribute('aria-hidden', 'true');
+      video.src = `/media/effects/${effect.id}.mp4`;
+      video.addEventListener('playing', () => {
+        if (hoverPreview === state) button.classList.add('is-previewing');
+      });
+      video.addEventListener('error', () => {
+        if (hoverPreview === state) stopHoverPreview();
+      });
+      button.append(video);
+      video.play().catch(() => {
+        if (hoverPreview === state) stopHoverPreview();
+      });
+    }, 120);
+  });
+  button.addEventListener('pointerleave', () => {
+    if (hoverPreview?.button === button) stopHoverPreview();
+  });
+}
+
+window.addEventListener('scroll', stopHoverPreview, {passive: true, capture: true});
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) stopHoverPreview();
+});
+window.addEventListener('blur', stopHoverPreview);
+reducedMotion.addEventListener('change', stopHoverPreview);
+hoverPointer.addEventListener('change', stopHoverPreview);
 
 function el(tag, className, text) {
   const node = document.createElement(tag);
@@ -15,6 +75,7 @@ function el(tag, className, text) {
 }
 
 function openViewer(title, trigger) {
+  stopHoverPreview();
   lastTrigger = trigger;
   document.querySelector('#viewer-title').textContent = title;
   body.replaceChildren();
@@ -54,6 +115,7 @@ function showProject(id, trigger) {
 }
 
 function renderEffects() {
+  stopHoverPreview();
   const query = document.querySelector('#effect-search').value.trim().toLowerCase();
   let filtered = effects.filter(e => (activeFilter === 'all' || e.group === activeFilter) && `${e.name} ${e.use} ${e.credit || ''}`.toLowerCase().includes(query));
   if (!expanded && activeFilter === 'all' && !query) filtered = featured.map(id => effects.find(e => e.id === id)).filter(Boolean);
@@ -65,6 +127,7 @@ function renderEffects() {
     const button = el('button');
     button.dataset.effect = effect.id;
     button.setAttribute('aria-label', `Play ${effect.name}`);
+    enableHoverPreview(button, effect);
     const image = el('img');
     image.src = `/media/effects/${effect.id}.jpg`;
     image.alt = `${effect.name} effect preview`;

@@ -22,3 +22,9 @@ The build verifies a pinned release archive and permits only the 125 effect vide
 and poster pairs. Media is never committed to Git history.
 
 See [DEPLOYMENT.md](DEPLOYMENT.md) for deployment and rollback.
+
+## Browsing effects
+
+Hover a gallery card with a mouse for a muted, looping inline preview. Moving away
+restores the poster. Only one preview plays at a time. Click or tap for the full
+player; reduced-motion preferences keep hover previews still.
