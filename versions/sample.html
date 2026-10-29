@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#ecece2">
+  <meta name="description" content="Simon Moreno builds useful tools with AI and shares what he learns. Explore his projects and public effects library.">
+  <title>Simon Moreno — Building & sharing</title>
+  <link rel="canonical" href="https://simorenoh.github.io/">
+  <link rel="stylesheet" href="/versions/sample.css?v=6fbd9b6222cd">
+  <script src="/app.js?v=ad5201aeb699" defer></script>
+  <script src="/versions/sample.js?v=34295795585b" defer></script>
+</head>
+<body data-design="editorial">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="page-sheet">
+    <header class="site-header frame"><a class="wordmark" href="/">Simon Moreno<span>✳</span></a><nav aria-label="Main navigation"><a href="#work">Projects</a><a href="#lab">Effects</a><a href="#about">About</a></nav><a class="hello" href="https://www.instagram.com/simon.morehq/" target="_blank" rel="noopener">Say hello ↗</a></header>
+    <main id="main">
+      <section class="hero frame" aria-labelledby="hero-title">
+        <div class="hero-copy"><h1 id="hero-title">Build. Share.<br>Keep learning.</h1><p>I’m Simon, a software engineer exploring what we can make with AI. I build tools I actually use and document what I learn along the way.</p><a class="action" href="#work">Explore my work <span aria-hidden="true">↘</span></a><a class="current" href="#content-hq">Currently building my own AI video editor ↗</a></div>
+        <div class="stage" id="stage" data-ui>
+          <div class="stage-top"><span>From my effects library</span><span id="stage-index">1 / 4</span></div>
+          <div class="stage-art" id="stage-art">
+            <div id="stage-canvas" aria-hidden="true"></div>
+            <div class="poster-stack">
+              <button class="poster side-left" data-effect="paper-collage" aria-label="Play Paper collage"><img src="/media/effects/paper-collage.jpg" alt="Paper collage effect" width="360" height="640"></button>
+              <button class="poster main-poster" id="poster-button" data-effect="profile-card" aria-label="Play Profile card"><img id="hero-poster" src="/media/effects/profile-card.jpg" alt="Profile card effect" width="360" height="640" fetchpriority="high"></button>
+              <button class="poster side-right" data-effect="orbit" aria-label="Play Photo orbit"><img src="/media/effects/orbit.jpg" alt="Photo orbit effect" width="360" height="640"></button>
+            </div>
+          </div>
+          <div class="stage-bottom"><div><p id="stage-title">Profile card</p><button class="plain-link" id="hero-play" data-effect="profile-card">Play preview ↗</button></div><div class="stage-controls"><button id="previous-effect" aria-label="Previous featured effect">←</button><button id="next-effect" aria-label="Next featured effect">→</button></div></div>
+          <p class="render-note" id="render-note" role="status" hidden></p>
+        </div>
+      </section>
+      <section class="work frame section" id="work" aria-labelledby="work-title">
+        <div class="section-intro"><h2 id="work-title">Useful tools.<br>Real experiments.</h2><p>Usually starts with “there has to be an easier way to do this.” These are the things I’m building to find out.</p></div>
+        <article class="project project-hq" id="content-hq"><div class="project-copy"><h3>Content HQ</h3><p>My home base for making content. I’m building the tools to turn a raw recording into a reel, and learning what it takes to make the process easier.</p><p>The editor, effects library, and research tools work today. Planning and scripting are the next pieces.</p><button class="plain-link" data-project="content-hq">Inside the project ↗</button></div><div class="contact-sheet" aria-label="Effect previews from Content HQ"><button data-effect="behind-title" aria-label="Play Title behind the head"><img src="/media/effects/behind-title.jpg" alt="Title behind the head" width="360" height="640" loading="lazy"></button><button data-effect="orbit" aria-label="Play Photo orbit"><img src="/media/effects/orbit.jpg" alt="Photo orbit" width="360" height="640" loading="lazy"></button><button data-effect="paper-collage" aria-label="Play Paper collage"><img src="/media/effects/paper-collage.jpg" alt="Paper collage" width="360" height="640" loading="lazy"></button></div></article>
+        <div class="project-notes"><article><h3>The editing workflow</h3><p>A personal workflow for pauses, retakes, captions, cutouts, and a little motion. Built around the way I make videos.</p><button class="plain-link" data-project="editor">Inside the editor ↗</button></article><article><h3>Idea → video</h3><p>An earlier Python prototype exploring Reddit ideas and generated media. Still unfinished, and part of how I got here.</p><a class="plain-link" href="https://github.com/simorenoh/video-generator" target="_blank" rel="noopener">Explore the code ↗</a></article></div>
+      </section>
+      <section class="effects section" id="lab" aria-labelledby="lab-title"><div class="frame">
+        <div class="section-intro"><h2 id="lab-title">A little motion.<br>A lot of curiosity.</h2><p><span id="effect-count">125</span> experiments in captions, cards, cutouts, and camera moves. Hover to browse, or open a preview.</p></div>
+        <div class="lab-toolbar" data-ui><div class="filters" role="group" aria-label="Filter effects"><button class="filter active" aria-pressed="true" data-filter="all">All</button><button class="filter" aria-pressed="false" data-filter="Captions & titles">Type</button><button class="filter" aria-pressed="false" data-filter="Cards & UI">Cards</button><button class="filter" aria-pressed="false" data-filter="Background & cutout">Scenes</button><button class="filter" aria-pressed="false" data-filter="Camera & transitions">Motion</button><button class="filter" aria-pressed="false" data-filter="Lists & data">Lists</button></div><label class="search"><span class="sr-only">Search effects</span><input id="effect-search" type="search" placeholder="Find an effect…" autocomplete="off"></label></div>
+        <p id="results" class="sr-only" role="status" aria-live="polite"></p><div class="effect-grid" id="effect-grid"><p>Loading the effects…</p></div>
+        <div class="lab-footer"><button class="action" id="show-all">Explore all 125 effects ↗</button><a class="plain-link" href="/effects/">Open the full library ↗</a></div>
+      </div></section>
+      <section class="about section frame" id="about" aria-labelledby="about-title"><h2 id="about-title">An engineer.<br>A curious human.</h2><div class="letter"><p>I’m a software engineer who started making content about AI. Somewhere along the way, making the videos became its own building project.</p><p>I like taking something I’m curious about and seeing how far I can get with it. This is where I collect the tools, experiments, and lessons that come out of that.</p><p>Away from the keyboard: tennis, Champions League, and finding a reason to get outside.</p><p class="signature">Simon</p></div></section>
+    </main>
+  </div>
+  <footer class="site-footer"><div class="frame"><div class="footer-intro"><h2>Let’s make<br>something interesting.</h2><a class="action" href="https://www.instagram.com/simon.morehq/" target="_blank" rel="noopener">Say hello on Instagram ↗</a></div><div class="footer-bottom"><a class="wordmark" href="/">Simon Moreno</a><div><a href="https://github.com/simorenoh" target="_blank" rel="noopener">GitHub ↗</a><a href="/versions/" target="_top">Design lab ↗</a></div><p>Built with curiosity. © <span id="year">2026</span></p></div></div></footer>
+  <dialog id="viewer" aria-labelledby="viewer-title"><div class="dialog-top"><h2 id="viewer-title"></h2><button id="close-viewer" class="close" aria-label="Close preview">✕</button></div><div id="viewer-body"></div></dialog>
+</body>
+</html>

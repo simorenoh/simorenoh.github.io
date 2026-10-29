@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f0eee7">
+  <meta name="description" content="One portfolio, five design directions. Compare Simon Moreno’s website experiments.">
+  <title>Design lab — Simon Moreno</title>
+  <link rel="stylesheet" href="/versions/lab.css?v=da22a922cda5">
+  <script src="/versions/lab.js?v=42000cbb9731" defer></script>
+</head>
+<body>
+  <header class="lab-header">
+    <a class="home" href="/" aria-label="Back to Simon Moreno’s homepage">sm<span>.</span></a>
+    <div class="lab-heading"><h1>One page. Five directions.</h1><p>The same projects and effects, through a different lens.</p></div>
+    <a id="open-sample" class="full-page" href="/" target="_blank" rel="noopener">Open full page ↗</a>
+  </header>
+  <main>
+    <div class="controls">
+      <div class="tabs" role="tablist" aria-label="Design direction">
+        <button id="tab-original" role="tab" aria-selected="true" aria-controls="sample-panel" data-design="original">Original</button>
+        <button id="tab-editorial" role="tab" aria-selected="false" aria-controls="sample-panel" tabindex="-1" data-design="editorial">Editorial</button>
+        <button id="tab-motion" role="tab" aria-selected="false" aria-controls="sample-panel" tabindex="-1" data-design="motion">Motion</button>
+        <button id="tab-spatial" role="tab" aria-selected="false" aria-controls="sample-panel" tabindex="-1" data-design="spatial">Spatial</button>
+        <button id="tab-shader" role="tab" aria-selected="false" aria-controls="sample-panel" tabindex="-1" data-design="shader">Shader</button>
+      </div>
+      <label class="mobile-select">Design direction<select id="design-select"><option value="original">Original</option><option value="editorial">Editorial</option><option value="motion">Motion</option><option value="spatial">Spatial</option><option value="shader">Shader</option></select></label>
+      <div class="viewport-controls" role="group" aria-label="Preview width"><button data-width="full" aria-pressed="true">Desktop</button><button data-width="phone" aria-pressed="false">Phone</button></div>
+    </div>
+    <div class="direction-note"><p id="direction-description">The current warm editorial homepage. Our starting point.</p><a id="reference" hidden target="_blank" rel="noopener">Reference ↗</a></div>
+    <section id="sample-panel" role="tabpanel" aria-labelledby="tab-original" tabindex="0">
+      <p id="loading" role="status">Opening the original design…</p>
+      <iframe id="sample" title="Original homepage preview" src="/?comparison=1"></iframe>
+    </section>
+    <p id="announcement" class="sr-only" role="status" aria-live="polite"></p>
+  </main>
+</body>
+</html>

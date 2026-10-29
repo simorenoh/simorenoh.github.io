@@ -12,7 +12,11 @@ from urllib.request import Request, urlopen
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
-SOURCE_FILES = ('index.html', 'style.css', 'app.js', 'effects.json', 'effects/index.html')
+SOURCE_FILES = (
+    'index.html', 'style.css', 'app.js', 'effects.json', 'effects/index.html',
+    'versions/index.html', 'versions/lab.css', 'versions/lab.js',
+    'versions/sample.html', 'versions/sample.css', 'versions/sample.js',
+)
 
 
 def build(archive_path=None):
@@ -73,7 +77,9 @@ def validate(output):
                 if tag in {'img', 'video'} and key in {'src', 'poster'}:
                     if not value.startswith('/media/effects/'):
                         raise ValueError(f'Unapproved media reference: {value}')
-    for name in ('index.html', 'effects/index.html'):
+    for name in SOURCE_FILES:
+        if not name.endswith('.html'):
+            continue
         AssetParser().feed((output / name).read_text())
     catalog = json.loads((output / 'effects.json').read_text())
     if len({effect['id'] for effect in catalog}) != len(catalog):
@@ -88,7 +94,7 @@ def validate(output):
     actual = {p.relative_to(output).as_posix() for p in output.rglob('*') if p.is_file()}
     if actual != allowed:
         raise ValueError('Unexpected or missing files in the public artifact.')
-    print(f'Validated {len(catalog)} effect pairs and both pages. No other media is included.')
+    print(f'Validated {len(catalog)} effect pairs and all public pages. No other media is included.')
 
 
 if __name__ == '__main__':
