@@ -5,8 +5,8 @@ media through GitHub Actions. Pages must use GitHub Actions as its publishing so
 
 ## Public scope
 
-The approved media bundle contains exactly 250 files: 125 effect demo MP4s and
-125 JPG posters, all under `media/effects/`. No other videos, images, or local
+The approved media bundle contains exactly 284 files: 142 effect demo MP4s and
+142 JPG posters, all under `media/effects/`. No other videos, images, or local
 assets are published. The full local homepage preview contains private assets
 and must not be copied over this public version.
 

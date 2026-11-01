@@ -83,6 +83,22 @@ function openViewer(title, trigger) {
   dialog.showModal();
 }
 
+function promptBlock(effect) {
+  if (!effect.prompt) return null;
+  const box = el('details', 'prompt-box');
+  const summary = el('summary', '', 'Prompt to recreate it');
+  const text = el('pre', 'prompt-text', effect.prompt);
+  const copy = el('button', 'button secondary prompt-copy', 'Copy prompt');
+  copy.type = 'button';
+  copy.addEventListener('click', () => {
+    const done = () => { copy.textContent = 'Copied ✓'; window.setTimeout(() => { copy.textContent = 'Copy prompt'; }, 1600); };
+    const fallback = () => { const range = document.createRange(); range.selectNodeContents(text); const selection = window.getSelection(); selection.removeAllRanges(); selection.addRange(range); copy.textContent = 'Selected: press ⌘C'; };
+    if (navigator.clipboard?.writeText) navigator.clipboard.writeText(effect.prompt).then(done, fallback); else fallback();
+  });
+  box.append(summary, el('p', 'prompt-hint', 'Paste it into Claude Code (or any coding agent) to rebuild this effect for your own clip.'), text, copy);
+  return box;
+}
+
 function playEffect(id, trigger) {
   const effect = effects.find(item => item.id === id);
   if (!effect) return;
@@ -98,6 +114,8 @@ function playEffect(id, trigger) {
   const note = el('p','dialog-note', `${effect.use}${effect.credit ? ` Visual inspiration: ${effect.credit}.` : ' From my editing experiments.'} Implementation: my own editing engine.`);
   video.addEventListener('error', () => { note.textContent = 'This preview could not load. Please refresh and try again.'; });
   body.append(video, note);
+  const box = promptBlock(effect);
+  if (box) body.append(box);
   video.play().catch(() => {});
 }
 
@@ -117,7 +135,7 @@ function showProject(id, trigger) {
 function renderEffects() {
   stopHoverPreview();
   const query = document.querySelector('#effect-search').value.trim().toLowerCase();
-  let filtered = effects.filter(e => (activeFilter === 'all' || e.group === activeFilter) && `${e.name} ${e.use} ${e.credit || ''}`.toLowerCase().includes(query));
+  let filtered = effects.filter(e => (activeFilter === 'all' || e.group === activeFilter) && `${e.name} ${e.use} ${e.credit || ''} ${e.prompt || ''}`.toLowerCase().includes(query));
   if (!expanded && activeFilter === 'all' && !query) filtered = featured.map(id => effects.find(e => e.id === id)).filter(Boolean);
   const grid = document.querySelector('#effect-grid');
   grid.replaceChildren();
