@@ -28,3 +28,7 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for deployment and rollback.
 Hover a gallery card with a mouse for a muted, looping inline preview. Moving away
 restores the poster. Only one preview plays at a time. Click or tap for the full
 player; reduced-motion preferences keep hover previews still.
+
+## Font library
+
+`/fonts/` adds five static font specimens alongside the effects library, with a size control and official font/license links. Fontshare serves the webfonts through its official API/CDN; no font binaries or private trial fonts are included in this repository or the media release. The page has no video/audio player or editable content-generation tool. Source preparation lives in private Content HQ (`website/font_library.py`).

@@ -1,6 +1,13 @@
 # Media is deployed as a release-backed artifact, never committed.
 media/
-fonts/
+fonts/*
+!fonts/index.html
+!fonts/library.css
+!fonts/library.js
+*.ttf
+*.otf
+*.woff
+*.woff2
 dist/
 __pycache__/
 *.jpg

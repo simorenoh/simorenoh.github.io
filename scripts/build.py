@@ -16,6 +16,7 @@ SOURCE_FILES = (
     'index.html', 'style.css', 'app.js', 'effects.json', 'effects/index.html',
     'versions/index.html', 'versions/lab.css', 'versions/lab.js',
     'versions/sample.html', 'versions/sample.css', 'versions/sample.js',
+    'fonts/index.html', 'fonts/library.css', 'fonts/library.js',
 )
 
 
