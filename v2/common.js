@@ -127,14 +127,23 @@
     rail.addEventListener('pointerup',event=>{if(start!==null&&Math.abs(event.clientX-start)>45)choose(selected+(event.clientX<start?1:-1));start=null;});
     rail.addEventListener('pointercancel',()=>{start=null;});
     function updateMotion(){motion.textContent=rotating?'Pause rotation':'Resume rotation';motion.setAttribute('aria-pressed',String(rotating));}
-    motion.addEventListener('click',()=>{rotating=!rotating;updateMotion();});
+    motion.addEventListener('click',()=>{rotating=!rotating;if(rotating)choose(selected+1);updateMotion();});
     reduced.addEventListener('change',()=>{if(reduced.matches)rotating=false;updateMotion();});
-    const screening=rail.closest('.screening');
     new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;},{threshold:.2}).observe(rail);
-    const timer=setInterval(()=>{
-      if(rotating&&!document.hidden&&inView&&!dialog.open&&!screening.matches(':hover')&&!screening.contains(document.activeElement))choose(selected+1);
-    },4500);
-    window.addEventListener('pagehide',()=>clearInterval(timer),{once:true});
+    let timer;
+    function startTimer(){
+      clearInterval(timer);
+      timer=setInterval(()=>{
+        // Resume retains button focus and pointer hover: neither should silently stop it.
+        if(rotating&&!document.hidden&&inView&&!dialog.open)choose(selected+1);
+      },4500);
+    }
+    rail.addEventListener('keydown',event=>{
+      if(['ArrowLeft','ArrowRight','Home','End'].includes(event.key)){rotating=false;updateMotion();}
+    });
+    window.addEventListener('pagehide',()=>clearInterval(timer));
+    window.addEventListener('pageshow',startTimer);
+    startTimer();
     choose(selected);updateMotion();
   }
   const choices=[...document.querySelectorAll('[data-project-choice]')];
