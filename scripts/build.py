@@ -31,6 +31,8 @@ SOURCE_FILES = (
     'v2/effects/index.html',
     'v2/effects.css',
     'v2/v1/effects/index.html',
+    'references/index.html',
+    'v2/references.css',
     'v2/baseline.json',
     'v2/v1/index.html',
     'v2/v1/style.css',
