@@ -97,54 +97,74 @@
 
   const rail = document.querySelector('#cinema-rail');
   if (rail) {
-    const cards=[...rail.querySelectorAll('[data-scene]')];let selected=2;
+    const cards=[...rail.querySelectorAll('[data-scene]')];
     const reduced=matchMedia('(prefers-reduced-motion: reduce)');
     const motion=document.querySelector('#scene-motion');
-    let rotating=!reduced.matches, inView=true;
-    const half=Math.floor(cards.length/2);
-    document.querySelector('#scene-total').textContent=String(cards.length).padStart(2,'0');
-    function choose(index) {
-      selected=(index+cards.length)%cards.length;
+    const count=cards.length;
+    const wrap=value=>((value%count)+count)%count;
+    let phase=2, selected=-1, rotating=!reduced.matches, inView=true, lastTime=null, tween=null, frame;
+    document.querySelector('#scene-total').textContent=String(count).padStart(2,'0');
+    function updateMotion(){motion.textContent=rotating?'Pause rotation':'Resume rotation';motion.setAttribute('aria-pressed',String(rotating));}
+    function paint(){
+      const nearest=wrap(Math.round(phase));
       cards.forEach((card,i)=>{
-        // Recycle only at the far, clipped edge; every visible card moves one slot.
-        const offset=((i-selected+half+cards.length)%cards.length)-half;
-        const previous=Number(card.style.getPropertyValue('--offset'));
-        if(Math.abs(offset-previous)>half){card.classList.add('is-recycling');requestAnimationFrame(()=>requestAnimationFrame(()=>card.classList.remove('is-recycling')));}
-        card.style.setProperty('--offset',offset);
-        card.setAttribute('aria-pressed',String(i===selected));card.tabIndex=i===selected?0:-1;
+        // A single fractional phase drives every card, including both visible edges.
+        // Recycling occurs half a complete collection away, outside the clipped viewport.
+        const offset=wrap(i-phase+count/2)-count/2;
+        card.style.setProperty('--offset',offset.toFixed(5));
+        card.setAttribute('aria-pressed',String(i===nearest));card.tabIndex=i===nearest?0:-1;
       });
-      const card=cards[selected];document.querySelector('#scene-name').textContent=card.dataset.name;
-      document.querySelector('#scene-number').textContent=String(selected+1).padStart(2,'0');
-      document.querySelector('#scene-play').dataset.effect=card.dataset.scene;
-      document.querySelector('#scene-play').setAttribute('aria-label',`Open ${card.dataset.name} preview`);
+      if(nearest!==selected){
+        selected=nearest;const card=cards[selected];
+        document.querySelector('#scene-name').textContent=card.dataset.name;
+        document.querySelector('#scene-number').textContent=String(selected+1).padStart(2,'0');
+        document.querySelector('#scene-play').dataset.effect=card.dataset.scene;
+        document.querySelector('#scene-play').setAttribute('aria-label',`Open ${card.dataset.name} preview`);
+      }
+    }
+    function choose(index){
+      const delta=wrap(index-phase+count/2)-count/2;
+      rotating=false;updateMotion();
+      if(reduced.matches){phase+=delta;tween=null;paint();}
+      else tween={from:phase,to:phase+delta,start:performance.now()};
     }
     cards.forEach((card,i)=>card.addEventListener('click',()=>choose(i)));
-    document.querySelector('#scene-prev').addEventListener('click',()=>choose(selected-1));
-    document.querySelector('#scene-next').addEventListener('click',()=>choose(selected+1));
-    rail.addEventListener('keydown',event=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(event.key)){event.preventDefault();choose(event.key==='Home'?0:event.key==='End'?cards.length-1:selected+(event.key==='ArrowRight'?1:-1));cards[selected].focus();}});
+    document.querySelector('#scene-prev').addEventListener('click',()=>choose(Math.round(phase)-1));
+    document.querySelector('#scene-next').addEventListener('click',()=>choose(Math.round(phase)+1));
+    rail.addEventListener('keydown',event=>{
+      if(['ArrowLeft','ArrowRight','Home','End'].includes(event.key)){
+        event.preventDefault();const index=event.key==='Home'?0:event.key==='End'?count-1:wrap(Math.round(phase)+(event.key==='ArrowRight'?1:-1));
+        choose(index);cards[index].focus({preventScroll:true});
+      }
+    });
     let start=null;
     rail.addEventListener('pointerdown',event=>{if(event.pointerType!=='mouse')start=event.clientX;});
-    rail.addEventListener('pointerup',event=>{if(start!==null&&Math.abs(event.clientX-start)>45)choose(selected+(event.clientX<start?1:-1));start=null;});
+    rail.addEventListener('pointerup',event=>{if(start!==null&&Math.abs(event.clientX-start)>45)choose(Math.round(phase)+(event.clientX<start?1:-1));start=null;});
     rail.addEventListener('pointercancel',()=>{start=null;});
-    function updateMotion(){motion.textContent=rotating?'Pause rotation':'Resume rotation';motion.setAttribute('aria-pressed',String(rotating));}
-    motion.addEventListener('click',()=>{rotating=!rotating;if(rotating)choose(selected+1);updateMotion();});
-    reduced.addEventListener('change',()=>{if(reduced.matches)rotating=false;updateMotion();});
-    new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;},{threshold:.2}).observe(rail);
-    let timer;
-    function startTimer(){
-      clearInterval(timer);
-      timer=setInterval(()=>{
-        // Resume retains button focus and pointer hover: neither should silently stop it.
-        if(rotating&&!document.hidden&&inView&&!dialog.open)choose(selected+1);
-      },4500);
+    motion.addEventListener('click',()=>{rotating=!rotating;tween=null;lastTime=null;updateMotion();});
+    reduced.addEventListener('change',()=>{if(reduced.matches){rotating=false;tween=null;}updateMotion();});
+    new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;lastTime=null;},{threshold:.2}).observe(rail);
+    new ResizeObserver(()=>{
+      const base=rail.clientWidth<=750?185:235;
+      rail.style.setProperty('--card-step',`${Math.max(base,rail.clientWidth/(count-3))}px`);
+    }).observe(rail);
+    function tick(time){
+      const dt=lastTime===null?0:Math.min((time-lastTime)/1000,.05);lastTime=time;
+      if(!document.hidden&&inView&&!dialog.open){
+        if(tween){
+          const progress=Math.min(1,(time-tween.start)/650);
+          const eased=1-Math.pow(1-progress,3);
+          phase=tween.from+(tween.to-tween.from)*eased;
+          if(progress===1)tween=null;
+          paint();
+        }else if(rotating){phase=wrap(phase+dt/6);paint();}
+      }
+      frame=requestAnimationFrame(tick);
     }
-    rail.addEventListener('keydown',event=>{
-      if(['ArrowLeft','ArrowRight','Home','End'].includes(event.key)){rotating=false;updateMotion();}
-    });
-    window.addEventListener('pagehide',()=>clearInterval(timer));
-    window.addEventListener('pageshow',startTimer);
-    startTimer();
-    choose(selected);updateMotion();
+    function startLoop(){cancelAnimationFrame(frame);lastTime=null;frame=requestAnimationFrame(tick);}
+    window.addEventListener('pagehide',()=>cancelAnimationFrame(frame));
+    window.addEventListener('pageshow',startLoop);
+    paint();updateMotion();startLoop();
   }
   const choices=[...document.querySelectorAll('[data-project-choice]')];
   if(choices.length){
