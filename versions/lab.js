@@ -1,5 +1,5 @@
 const directions = {
-  original: {name:'Original', description:'The current warm editorial homepage. Our starting point.', url:'/?comparison=1'},
+  original: {name:'Original', description:'The current warm editorial homepage. Our starting point.', url:'/v2/v1/?comparison=1'},
   editorial: {name:'Editorial', description:'Taste-guided composition. Bigger type, quiet paper surfaces, and an effects contact sheet.', source:'https://github.com/Leonxlnx/taste-skill'},
   motion: {name:'Motion', description:'A darker studio, a moving card stack, and previews that expand from their place in the gallery. Inspired by Kokonut UI.', source:'https://kokonutui.com/docs/cards/lightbox-grid'},
   spatial: {name:'Spatial', description:'A live Three.js carousel made from the public effects posters. Choose a card, then play its preview.', source:'https://r3f.docs.pmnd.rs/getting-started/examples'},

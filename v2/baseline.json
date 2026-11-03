@@ -1,0 +1,14 @@
+{
+  "captured": "2026-11-02",
+  "source_commit": "1baf1c4",
+  "sha256_before_path_rewrites": {
+    "index.html": "56086355bec32c3315b357e3d44bf33548ec5e9e6f3b71d2140f6b757370fabf",
+    "style.css": "69720a95c6835b9947db4249bcd99228b37e42d83a492c14b1ef92e86a553118",
+    "app.js": "618f07092166f953c8a455f6f7404a263878e65378d6e2164ef46f766ffb15ee",
+    "effects.json": "58a5f9f2dfe29967415e3c6ffa805540e825cbc5ca8e7efe919cd2f199b49ce5"
+  },
+  "effects_library_snapshot": {
+    "source": "website/public/effects/index.html",
+    "sha256_before_path_rewrites": "b4a7e3f463e123d7bd83d9296c1cd95c66e4d24fe6967eb079419feaf1c91d81"
+  }
+}
